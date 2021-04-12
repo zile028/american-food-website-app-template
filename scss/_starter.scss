@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap");
+$headingsPrimary: "Alfa Slab One", cursive;
+$headingsSecondary: "Bebas Neue", cursive;
+$textFont: "Montserrat", sans-serif;
+$fontSize: 16px;
+$braon: #43200c;
+$orange: #ffc136;
+$crvena: #df1b1c;
+$siva: #a19e99;
+$bela: #fff;
+$transition: 0.3s ease;
+$py: 4rem 0;
+
+// RESET STYLE
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// BASIC STYLE
+html {
+    scroll-behavior: smooth;
+}
+body {
+    line-height: 20px;
+    font-size: $fontSize;
+    color: $siva;
+    background-color: $bela;
+}
+
+h1,
+h2 {
+    font-family: $headingsPrimary;
+    color: $braon;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-family: $headingsSecondary;
+    color: $braon;
+}
+
+ul {
+    list-style: none;
+}
+p,
+a {
+    font-family: $textFont;
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    //width: 100%;
+    display: block;
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    @media (max-width: 769px) {
+        width: 90%;
+    }
+}

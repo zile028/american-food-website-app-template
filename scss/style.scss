@@ -223,10 +223,16 @@ header {
                 left: 30px;
                 font-family: $headingsSecondary;
                 font-weight: 400;
+                @media (max-width: 580px) {
+                    font-size: 1.4rem;
+                }
                 span {
                     font-size: 3rem;
                     @media (max-width: 769px) {
                         font-size: 2.7rem;
+                    }
+                    @media (max-width: 580px) {
+                        font-size: 2rem;
                     }
                 }
             }

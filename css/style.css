@@ -453,6 +453,12 @@ header article > div div p:last-child {
   font-weight: 400;
 }
 
+@media (max-width: 580px) {
+  .action article div h3 {
+    font-size: 1.4rem;
+  }
+}
+
 .action article div h3 span {
   font-size: 3rem;
 }
@@ -460,6 +466,12 @@ header article > div div p:last-child {
 @media (max-width: 769px) {
   .action article div h3 span {
     font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .action article div h3 span {
+    font-size: 2rem;
   }
 }
 

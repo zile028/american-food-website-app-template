@@ -94,6 +94,12 @@ header {
   }
 }
 
+@media (max-width: 580px) {
+  header {
+    min-height: 80vh;
+  }
+}
+
 header nav {
   width: 100%;
 }
@@ -218,6 +224,12 @@ header nav ul li a {
   color: #3d2514;
   letter-spacing: 3px;
   font-family: "Bebas Neue", cursive;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #df1b1c;
 }
 
 header article {
@@ -337,6 +349,13 @@ header article > div div {
   left: 0;
 }
 
+@media (max-width: 580px) {
+  header article > div div {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 header article > div div::before {
   content: "";
   position: absolute;
@@ -353,6 +372,12 @@ header article > div div p {
   font-size: 5rem;
   font-family: "Bebas Neue", cursive;
   line-height: 1;
+}
+
+@media (max-width: 580px) {
+  header article > div div p {
+    font-size: 4rem;
+  }
 }
 
 header article > div div p span {
@@ -465,7 +490,7 @@ header article > div div p:last-child {
 
 .choose h2 {
   font-size: 3.5rem;
-  margin: 40px 0 30px;
+  margin: 40px 20px 30px;
 }
 
 .choose p {
@@ -514,8 +539,23 @@ header article > div div p:last-child {
   }
 }
 
+@media (max-width: 580px) {
+  .choose article div {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+}
+
 .choose article div img {
   width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 580px) {
+  .choose article div img {
+    width: 80%;
+  }
 }
 
 .choose article div h3 {
@@ -988,5 +1028,12 @@ footer article.second ul li {
 
 footer article.second ul li i {
   font-size: 2rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+footer article.second ul li i:hover {
+  color: #df1b1c;
 }
 /*# sourceMappingURL=style.css.map */

@@ -40,6 +40,9 @@ header {
     @media (max-width: 769px) {
         padding: 30px 5%;
     }
+    @media (max-width: 580px) {
+        min-height: 80vh;
+    }
     @include bgBasic;
     nav {
         width: 100%;
@@ -95,6 +98,10 @@ header {
                     color: $braon;
                     letter-spacing: 3px;
                     font-family: $headingsSecondary;
+                    transition: $transition;
+                    &:hover {
+                        color: $crvena;
+                    }
                 }
             }
         }
@@ -159,6 +166,10 @@ header {
                 background-color: $crvena;
                 bottom: 0;
                 left: 0;
+                @media (max-width: 580px) {
+                    width: 150px;
+                    height: 150px;
+                }
                 &::before {
                     content: "";
                     position: absolute;
@@ -175,6 +186,9 @@ header {
                     font-size: 5rem;
                     font-family: $headingsSecondary;
                     line-height: 1;
+                    @media (max-width: 580px) {
+                        font-size: 4rem;
+                    }
                     span {
                         font-size: 2rem;
                     }
@@ -241,7 +255,7 @@ header {
     }
     h2 {
         font-size: 3.5rem;
-        margin: 40px 0 30px;
+        margin: 40px 20px 30px;
     }
     p {
         padding: 0 10%;
@@ -263,8 +277,15 @@ header {
                     margin: 0 auto;
                 }
             }
+            @media (max-width: 580px) {
+                flex: 0 0 100%;
+            }
             img {
                 width: 100%;
+                margin: 0 auto;
+                @media (max-width: 580px) {
+                    width: 80%;
+                }
             }
             h3 {
                 font-size: 2.5rem;
@@ -535,6 +556,11 @@ footer {
                     margin-left: 20px;
                     i {
                         font-size: 2rem;
+                        cursor: pointer;
+                        transition: $transition;
+                        &:hover {
+                            color: $crvena;
+                        }
                     }
                 }
             }

@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Montserrat:wght@400;500;700&display=swap");
 $headingsPrimary: "Alfa Slab One", cursive;
 $headingsSecondary: "Bebas Neue", cursive;
 $textFont: "Montserrat", sans-serif;
 $fontSize: 16px;
-$braon: #43200c;
+$braon: #3d2514;
 $orange: #ffc136;
 $crvena: #df1b1c;
-$siva: #a19e99;
+$siva: #3d3d3d;
 $bela: #fff;
 $transition: 0.3s ease;
 $py: 4rem 0;
@@ -31,6 +31,8 @@ h1,
 h2 {
     font-family: $headingsPrimary;
     color: $braon;
+    text-transform: uppercase;
+    line-height: 1;
 }
 
 h3,
@@ -39,13 +41,16 @@ h5,
 h6 {
     font-family: $headingsSecondary;
     color: $braon;
+    text-transform: uppercase;
+    line-height: 1;
 }
 
 ul {
     list-style: none;
 }
 p,
-a {
+a,
+li {
     font-family: $textFont;
     text-decoration: none;
     color: inherit;

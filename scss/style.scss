@@ -15,7 +15,6 @@
     &::before {
         position: absolute;
         content: "";
-        display: block;
         height: 60px;
         width: 60px;
         left: 0px;
@@ -180,6 +179,258 @@ header {
         img {
             width: 100%;
             border-radius: 20px;
+        }
+    }
+}
+
+// choose
+.choose {
+    width: 100%;
+    text-align: center;
+    padding: 0 0 50px 0;
+    & > h3 {
+        background-color: $orange;
+        padding: 10px 20px;
+        font-size: 2rem;
+        font-weight: 400;
+        display: inline-block;
+    }
+    h2 {
+        font-size: 3.5rem;
+        margin: 40px 0 30px;
+    }
+    p {
+        padding: 0 10%;
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 1.5;
+        color: rgba($braon, 0.8);
+    }
+    article {
+        @include flex(space-between, flex-end);
+        padding: 0 5%;
+        margin-top: 60px;
+        div {
+            flex: 0 0 26%;
+            img {
+                width: 100%;
+            }
+            h3 {
+                font-size: 2.5rem;
+                font-weight: 400;
+                margin: 20px 0;
+            }
+            p {
+                font-size: 1.1rem;
+            }
+            button {
+                background-color: $crvena;
+                color: $bela;
+                padding: 20px 50px;
+                margin-top: 40px;
+                font-family: $headingsPrimary;
+                font-size: 1.3rem;
+                text-transform: uppercase;
+                border: none;
+                cursor: pointer;
+                transition: $transition;
+                &:hover {
+                    background-color: $braon;
+                    color: $orange;
+                }
+            }
+        }
+    }
+}
+
+// events
+.events {
+    padding: 50px 5%;
+    h4 {
+        font-size: 2rem;
+        color: $siva;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    article {
+        @include flex(space-between, stretch);
+        padding: 30px;
+        box-shadow: 20px 20px 20px rgba($siva, 0.5);
+        & > div {
+            &:first-child {
+                flex: 0 0 48%;
+                padding: 30px;
+                position: relative;
+                @include flex(flex-start, stretch, column);
+            }
+            &:last-child {
+                flex: 0 0 52%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .post {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            color: $siva;
+            width: 100%;
+            margin-top: 30px;
+            flex: 1;
+            overflow: hidden;
+            @include flex(center, stretch);
+            position: relative;
+            p {
+                flex: 1;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                transition: $transition;
+                &.activePost {
+                    left: 0;
+                }
+            }
+        }
+        .postNav {
+            position: absolute;
+            bottom: 0;
+            left: 30px;
+            li {
+                display: inline-block;
+                height: 15px;
+                width: 15px;
+                margin-right: 5px;
+                border-radius: 50%;
+                background-color: rgba($siva, 0.5);
+                cursor: pointer;
+                &.activeNav {
+                    background-color: $orange;
+                }
+            }
+        }
+    }
+}
+// reservation
+.reservation {
+    text-align: center;
+    padding: 70px 20% 100px;
+    overflow: hidden;
+    position: relative;
+    h3 {
+        padding: 10px 20px;
+        font-size: 2rem;
+        font-weight: 400;
+        display: inline-block;
+    }
+    h2 {
+        font-size: 3.5rem;
+        margin: 40px 0 30px;
+    }
+    form {
+        margin-top: 100px;
+        position: relative;
+        @include flex(space-between, flex-start);
+        input {
+            flex: 0 0 48%;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid $siva;
+            outline: none;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            font-family: $headingsSecondary;
+            font-size: 1.3rem;
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+        button {
+            font-family: $headingsPrimary;
+            display: block;
+            padding: 20px;
+            flex: 0 0 48%;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            background-color: $crvena;
+            color: $bela;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: $transition;
+            &:hover {
+                background-color: $braon;
+                color: $orange;
+            }
+        }
+    }
+
+    img {
+        position: absolute;
+        &.topLeft {
+            top: 0;
+            left: 0;
+        }
+        &.midleLeft {
+            left: -15%;
+            top: 0;
+        }
+        &.bottomRight {
+            bottom: 0;
+            right: -10px;
+        }
+    }
+}
+// footer
+footer {
+    background: url(../img/footer-bg.jpg);
+    margin: 0 5% 5%;
+    padding: 80px 40px 30px;
+    @include bgBasic;
+    a {
+        @include logo("footer");
+        width: 100%;
+    }
+    article {
+        @include flex(space-between, flex-start);
+        color: $bela;
+        margin-top: 50px;
+        &.first {
+            p {
+                flex: 0 0 40%;
+                text-align: left;
+                line-height: 1.7;
+                font-size: 1.1rem;
+            }
+            ul {
+                flex: 0 0 30%;
+                li {
+                    line-height: 1.7;
+                    font-family: $headingsSecondary;
+                    font-size: 1.5rem;
+                    i {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+        &.second {
+            align-items: center;
+            ul {
+                li {
+                    display: inline-block;
+                    margin-left: 20px;
+
+                    i {
+                        font-size: 2rem;
+                    }
+                }
+            }
         }
     }
 }

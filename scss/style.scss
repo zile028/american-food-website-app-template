@@ -34,14 +34,20 @@ body {
 }
 header {
     @include flex(space-between, center, column);
-    height: 100vh;
+    min-height: 100vh;
     background: url(../img/header-bg.jpg);
     padding: 50px 5%;
+    @media (max-width: 769px) {
+        padding: 30px 5%;
+    }
     @include bgBasic;
     nav {
         width: 100%;
         .topBar {
             @include flex(space-between, center);
+            @media (max-width: 769px) {
+                flex-direction: column;
+            }
             a {
                 @include logo("header");
             }
@@ -52,6 +58,9 @@ header {
                 padding-left: 60px;
                 font-weight: 700;
                 letter-spacing: 2px;
+                @media (max-width: 769px) {
+                    margin-top: 10px;
+                }
                 &::before {
                     content: "";
                     position: absolute;
@@ -68,11 +77,20 @@ header {
         ul {
             text-align: right;
             margin-top: 30px;
+            @media (max-width: 769px) {
+                @include flex(space-between, center);
+            }
             li {
                 display: inline-block;
                 margin-left: 60px;
                 text-transform: uppercase;
                 font-size: 1.7rem;
+                @media (max-width: 769px) {
+                    margin-left: 0px;
+                }
+                &:first-child {
+                    margin-left: 0;
+                }
                 a {
                     color: $braon;
                     letter-spacing: 3px;
@@ -85,9 +103,15 @@ header {
         @include flex(space-between, center);
         flex: 1;
         width: 100%;
+        @media (max-width: 769px) {
+            flex-direction: column;
+        }
         hgroup {
             align-self: flex-start;
             padding-top: 100px;
+            @media (max-width: 769px) {
+                padding-top: 50px;
+            }
             h4 {
                 font-family: $headingsSecondary;
                 border: 3px dashed $braon;
@@ -103,6 +127,9 @@ header {
                 text-shadow: 5px 5px 0 $bela;
                 line-height: 1;
                 margin: 20px 0;
+                @media (max-width: 769px) {
+                    font-size: 4rem;
+                }
             }
             h2 {
                 font-size: 3.3rem;
@@ -110,10 +137,19 @@ header {
                 line-height: 1;
                 text-shadow: 5px 5px 0 $bela;
                 text-transform: uppercase;
+                @media (max-width: 769px) {
+                    font-size: 2.7rem;
+                }
             }
         }
         & > div {
             position: relative;
+            img {
+                @media (max-width: 769px) {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+            }
             div {
                 @include flex(center, center, column);
                 position: absolute;
@@ -158,9 +194,11 @@ header {
     article {
         flex: 0 0 48%;
         @include flex(space-between, center, column);
+        @media (max-width: 769px) {
+            flex: 0 0 100%;
+        }
         div {
             width: 100%;
-
             position: relative;
             h3 {
                 position: absolute;
@@ -173,12 +211,18 @@ header {
                 font-weight: 400;
                 span {
                     font-size: 3rem;
+                    @media (max-width: 769px) {
+                        font-size: 2.7rem;
+                    }
                 }
             }
         }
         img {
             width: 100%;
             border-radius: 20px;
+            @media (max-width: 769px) {
+                margin-bottom: 20px;
+            }
         }
     }
 }
@@ -212,6 +256,13 @@ header {
         margin-top: 60px;
         div {
             flex: 0 0 26%;
+            @media (max-width: 769px) {
+                flex: 0 0 48%;
+                margin-bottom: 40px;
+                &:last-child {
+                    margin: 0 auto;
+                }
+            }
             img {
                 width: 100%;
             }
@@ -234,6 +285,7 @@ header {
                 border: none;
                 cursor: pointer;
                 transition: $transition;
+
                 &:hover {
                     background-color: $braon;
                     color: $orange;
@@ -259,15 +311,25 @@ header {
         @include flex(space-between, stretch);
         padding: 30px;
         box-shadow: 20px 20px 20px rgba($siva, 0.5);
+        @media (max-width: 769px) {
+            flex-direction: column;
+        }
         & > div {
             &:first-child {
+                @include flex(flex-start, stretch, column);
                 flex: 0 0 48%;
                 padding: 30px;
                 position: relative;
-                @include flex(flex-start, stretch, column);
+                @media (max-width: 769px) {
+                    padding: 10px 10px 30px 0;
+                    margin-bottom: 30px;
+                }
             }
             &:last-child {
                 flex: 0 0 52%;
+                @media (max-width: 769px) {
+                    width: 100%;
+                }
                 img {
                     width: 100%;
                 }
@@ -291,8 +353,14 @@ header {
                 left: -100%;
                 width: 100%;
                 transition: $transition;
+                @media (max-width: 769px) {
+                    font-size: 1.1rem;
+                }
                 &.activePost {
                     left: 0;
+                    @media (max-width: 769px) {
+                        position: relative;
+                    }
                 }
             }
         }
@@ -300,6 +368,9 @@ header {
             position: absolute;
             bottom: 0;
             left: 30px;
+            @media (max-width: 769px) {
+                left: 0;
+            }
             li {
                 display: inline-block;
                 height: 15px;
@@ -321,6 +392,9 @@ header {
     padding: 70px 20% 100px;
     overflow: hidden;
     position: relative;
+    @media (max-width: 769px) {
+        padding: 70px 5% 100px;
+    }
     h3 {
         padding: 10px 20px;
         font-size: 2rem;
@@ -335,6 +409,11 @@ header {
         margin-top: 100px;
         position: relative;
         @include flex(space-between, flex-start);
+        @media (max-width: 769px) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-content: center;
+        }
         input {
             flex: 0 0 48%;
             padding: 20px;
@@ -345,6 +424,10 @@ header {
             margin-bottom: 30px;
             font-family: $headingsSecondary;
             font-size: 1.3rem;
+            @media (max-width: 769px) {
+                width: 100%;
+                background-color: rgba($bela, 0.8);
+            }
             &:last-child {
                 margin-bottom: 0px;
             }
@@ -363,6 +446,9 @@ header {
             text-transform: uppercase;
             cursor: pointer;
             transition: $transition;
+            @media (max-width: 769px) {
+                width: 100%;
+            }
             &:hover {
                 background-color: $braon;
                 color: $orange;
@@ -372,6 +458,9 @@ header {
 
     img {
         position: absolute;
+        @media (max-width: 769px) {
+            z-index: -1;
+        }
         &.topLeft {
             top: 0;
             left: 0;
@@ -379,6 +468,11 @@ header {
         &.midleLeft {
             left: -15%;
             top: 0;
+            @media (max-width: 769px) {
+                left: 0;
+                height: 100%;
+                opacity: 0.5;
+            }
         }
         &.bottomRight {
             bottom: 0;
@@ -401,15 +495,25 @@ footer {
         @include flex(space-between, flex-start);
         color: $bela;
         margin-top: 50px;
+        @media (max-width: 769px) {
+            flex-direction: column;
+        }
         &.first {
             p {
                 flex: 0 0 40%;
                 text-align: left;
                 line-height: 1.7;
                 font-size: 1.1rem;
+                @media (max-width: 769px) {
+                    flex: 0 0 100%;
+                    margin-bottom: 20px;
+                }
             }
             ul {
                 flex: 0 0 30%;
+                @media (max-width: 769px) {
+                    flex: 0 0 100%;
+                }
                 li {
                     line-height: 1.7;
                     font-family: $headingsSecondary;
@@ -423,10 +527,12 @@ footer {
         &.second {
             align-items: center;
             ul {
+                @media (max-width: 769px) {
+                    margin-top: 20px;
+                }
                 li {
                     display: inline-block;
                     margin-left: 20px;
-
                     i {
                         font-size: 2rem;
                     }
